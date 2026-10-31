@@ -70,6 +70,7 @@ The directory's **Optional payment** classification applies because third-party 
 - [Connection setup and troubleshooting](docs/SETUP.md)
 - [Practice, review, editing and exports](docs/USER_GUIDE.md)
 - [Privacy and storage](docs/PRIVACY.md)
+- [Beta walkthrough and feedback template](docs/BETA_FEEDBACK.md)
 - [Report a problem](https://github.com/shbhmrzd/rehearse-releases/issues)
 
 For a report, include Rehearse/Obsidian versions, your OS, provider/model and reproduction steps. Use a public or invented example; do not attach API keys, private notes or raw plugin data.
