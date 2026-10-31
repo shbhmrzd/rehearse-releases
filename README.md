@@ -8,6 +8,14 @@ All Rehearse features are free. Connect your own cloud provider or local model d
 
 This repository contains built plugin files and user documentation. The development repository and its history remain private; the bundled JavaScript is publicly readable. Rehearse is an independent community plugin, not an official Obsidian product.
 
+## Watch the demo
+
+A 50-second walkthrough: generate cards from a note, review and save them, then return for spaced review with answers hidden until you reveal them.
+
+https://github.com/user-attachments/assets/e126e734-9d17-40db-ba96-b61643f1fc95
+
+*Shown in the Rehearse 0.5.0 standalone demo, using real local Llama 3.1 8B output through Ollama. Generation wait is omitted. Connect a provider API key or a local model; cloud API usage may cost extra.*
+
 ## Installation
 
 Rehearse is available in [Obsidian's Community directory](https://community.obsidian.md/plugins/rehearse).
