@@ -1,12 +1,12 @@
 # Try Rehearse and tell us what gets in the way
 
-Rehearse 0.5 is a public beta for turning a note into a short practice session. All plugin features are free. Download the ZIP from [the public release](https://github.com/shbhmrzd/rehearse-releases/releases/tag/0.5.0); the Community directory listing is not available yet. You do not need a second AI plugin or a Rehearse account.
+Rehearse 0.5 is a public beta for turning a note into a short practice session. All plugin features are free. Download the ZIP from [the public release](https://github.com/shbhmrzd/rehearse-releases/releases/tag/0.5.0) and follow the [installation guide](../README.md#installation). The [Community directory page](https://community.obsidian.md/plugins/rehearse) is published, but installation through Obsidian's catalog is not yet verified. You do not need a second AI plugin or a Rehearse account.
 
 This is voluntary feedback, not an exam. Skip any step or stop at any time. Rehearse sends no usage analytics. Share only what you choose in the template below; a topic description is enough, and private notes, keys and account details are not needed.
 
 ## First session: about ten minutes
 
-1. Install the supplied package using the [manual installation steps](../README.md#beta--manual-installation). In Obsidian, run **Rehearse: Open practice** from the command palette. No developer CLI is required.
+1. Install the supplied package using the [manual installation steps](../README.md#manual-installation). In Obsidian, run **Rehearse: Open practice** from the command palette. No developer CLI is required.
 2. Choose **Try the sample**, inspect the five prepared questions, then **Practice selected**. Answer before revealing and compare with the checklist. Note the first control or instruction that confuses you.
 3. To try your own material, open Rehearse's **Settings**. Configure a provider you already use, refresh its models, select a text model and save. The [setup guide](SETUP.md) explains cloud and local choices. Cloud generation may cost money at your provider; local AI requires your own running runtime. If you do not have either, skip generation and continue with the sample or a manual card.
 4. Open a short Markdown note on a subject you want to remember. Run **Rehearse: Practice this note**, or select one passage and run **Rehearse: Practice selected text**. Enter a concrete learning goal and create five questions. Record how long setup and generation took separately, if convenient.
