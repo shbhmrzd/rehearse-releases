@@ -8,11 +8,13 @@ All Rehearse features are free. Connect your own cloud provider or local model d
 
 This repository contains built plugin files and user documentation. The development repository and its history remain private; the bundled JavaScript is publicly readable. Rehearse is an independent community plugin, not an official Obsidian product.
 
-## Install the beta
+## Installation
 
-The Obsidian Community directory listing is pending. Use either method below for the beta.
+The [Obsidian Community directory page](https://community.obsidian.md/plugins/rehearse) is published. At our verification on 31 October 2026, Rehearse was still absent from Obsidian's installation catalog, so directory installation could not be completed. Use the manual installation below or the optional BRAT installer for the beta.
 
-### BRAT
+When the app's catalog includes Rehearse, open the listing's **Add to Obsidian** link, choose **Install**, then **Enable**. Run **Rehearse: Open practice** and choose **Try the sample**.
+
+### Optional beta installation with BRAT
 
 1. Install and enable [BRAT](https://github.com/TfTHacker/obsidian42-brat) from Obsidian's Community plugins.
 2. In BRAT, choose **Add a beta plugin** and enter `https://github.com/shbhmrzd/rehearse-releases`.
