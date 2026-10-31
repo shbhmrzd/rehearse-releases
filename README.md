@@ -10,9 +10,13 @@ This repository contains built plugin files and user documentation. The developm
 
 ## Installation
 
-The [Obsidian Community directory page](https://community.obsidian.md/plugins/rehearse) is published. At our verification on 31 October 2026, Rehearse was still absent from Obsidian's installation catalog, so directory installation could not be completed. Use the manual installation below or the optional BRAT installer for the beta.
+Rehearse is available in [Obsidian's Community directory](https://community.obsidian.md/plugins/rehearse).
 
-When the app's catalog includes Rehearse, open the listing's **Add to Obsidian** link, choose **Install**, then **Enable**. Run **Rehearse: Open practice** and choose **Try the sample**.
+1. Open **Settings → Community plugins → Browse** and search for **Rehearse**, or use the listing's **Add to Obsidian** link.
+2. Choose **Install**, then **Enable**.
+3. Run **Rehearse: Open practice** from the command palette and choose **Try the sample**. The sample needs no AI setup.
+
+The manual ZIP and optional BRAT methods below are also available.
 
 ### Optional beta installation with BRAT
 
@@ -81,6 +85,6 @@ The [standalone demo](https://github.com/shbhmrzd/rehearse-releases/releases/dow
 
 ## Verification and license
 
-Version 0.5.0 passed 225 automated tests, build/lint/coverage checks and native Obsidian 1.14.5 workflow checks. Native testing covered Ollama generation, connection switching, key persistence, saved cards, reload, review/undo and exports. OpenAI discovery succeeded; generation was blocked by account quota. Other paid providers, native mobile and Anki import remain unverified. Checksums accompany each release.
+Version 0.5.0 passed 225 automated tests, build/lint/coverage checks and native Obsidian 1.14.5 workflow checks. Catalog installation succeeded after one retry; clean sample setup, selective saving, reload, review/undo and exports were verified. The cause of the first incomplete installation is unproven. Native testing covered Ollama generation, connection switching, key persistence, saved cards, reload, review/undo and exports. OpenAI discovery succeeded; generation was blocked by account quota. Other paid providers, native mobile and Anki import remain unverified. Checksums accompany each release.
 
 MIT licensed. FSRS is provided by `ts-fsrs`; see [third-party notices](THIRD_PARTY_NOTICES.md).
