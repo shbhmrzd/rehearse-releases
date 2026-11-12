@@ -1,7 +1,7 @@
 {
   "id": "rehearse",
   "name": "Rehearse",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "minAppVersion": "1.9.14",
   "description": "Turn notes into focused flashcards and quizzes using your AI connection, source evidence, and spaced repetition.",
   "author": "Rehearse contributors",

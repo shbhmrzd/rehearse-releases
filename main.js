@@ -3067,26 +3067,6 @@ var RehearseApp = class {
     }
     const panel = el("section", "rh-panel");
     panel.append(el("h2", "", "Source and learning goal"));
-    const options = this.host.notes();
-    if (options.length) {
-      const label = el("label", "rh-field");
-      label.append(el("span", "rh-label", "Source note"));
-      const select = el("select");
-      select.append(new Option("Choose a note\u2026", ""));
-      for (const path of options) select.append(new Option(path, path));
-      select.value = this.source?.path ?? "";
-      select.disabled = this.busy;
-      select.addEventListener("change", () => {
-        void this.run(async () => {
-          if (select.value) {
-            this.source = await this.host.readNote(select.value);
-            this.render();
-          }
-        });
-      });
-      label.append(select);
-      panel.append(label);
-    }
     if (this.source) {
       const source = el("div", "rh-source");
       source.append(
@@ -3862,9 +3842,7 @@ var RehearsePlugin = class extends import_obsidian.Plugin {
   lastSource;
   async onload() {
     const persistence = {
-      list: async () => Promise.all(
-        this.app.vault.getMarkdownFiles().filter((f) => f.path.startsWith(`${CARD_FOLDER}/`)).map(async (f) => ({ path: f.path, text: await this.app.vault.read(f) }))
-      ),
+      list: async () => Promise.all(this.cardFiles().map(async (f) => ({ path: f.path, text: await this.app.vault.read(f) }))),
       create: async (path, text) => {
         await this.ensureFolder(CARD_FOLDER);
         await this.app.vault.create((0, import_obsidian.normalizePath)(path), text);
@@ -3934,6 +3912,19 @@ var RehearsePlugin = class extends import_obsidian.Plugin {
         }).catch((error) => new import_obsidian.Notice(`Rehearse: ${errorMessage(error)}`, 12e3));
       });
   }
+  cardFiles() {
+    const folder = this.app.vault.getAbstractFileByPath(CARD_FOLDER);
+    if (!(folder instanceof import_obsidian.TFolder)) return [];
+    const files = [];
+    const visit = (current) => {
+      for (const child of current.children) {
+        if (child instanceof import_obsidian.TFolder) visit(child);
+        else if (child instanceof import_obsidian.TFile && child.extension === "md") files.push(child);
+      }
+    };
+    visit(folder);
+    return files;
+  }
   async ensureFolder(path) {
     let current = "";
     for (const part of path.split("/")) {
@@ -3989,13 +3980,6 @@ var RehearsePlugin = class extends import_obsidian.Plugin {
           json = null;
         }
         return { status: response.status, json };
-      },
-      notes: () => this.app.vault.getMarkdownFiles().filter((f) => !f.path.startsWith("Rehearse/")).map((f) => f.path).sort(),
-      readNote: async (path) => {
-        const file = this.app.vault.getAbstractFileByPath(path);
-        if (!(file instanceof import_obsidian.TFile))
-          throw new Error("Source note no longer exists. Choose another note.");
-        return { path, text: await this.app.vault.read(file) };
       },
       openSource: async (evidence) => {
         const file = this.app.vault.getAbstractFileByPath(evidence.path);

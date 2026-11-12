@@ -8,6 +8,8 @@ Rehearse v0.4 has no backend, account, payment integration, analytics, advertisi
 
 Rehearse includes its own provider adapters. No community AI plugin, Rehearse backend or account is required.
 
+Each explicit **Refresh models** action makes one GET request. Each **Create practice** action makes one POST request to a cloud or custom provider, or one model-list GET and one chat POST to local Ollama. Startup, sample practice, manual cards, saved-card review and exports make no provider requests. Retries require another user action.
+
 - **Refresh models:** GETs the chosen provider's models endpoint with its authentication headers; no note text is sent.
 - **Create practice:** sends selected source blocks, learning goal, schema and instructions directly to the configured provider. It does not send unrelated notes or index the vault.
 - Cloud connections send inputs off-device. The provider's retention, billing and privacy terms apply. Local runtimes follow their own configuration.
@@ -47,7 +49,7 @@ Review events contain card IDs, timestamps, self-ratings, and previous/next sche
 
 ## Permissions and scope
 
-The plugin lists Markdown note paths for its picker, reads the chosen note/passage for generation, and reads managed card files for the library. It does not recursively index notes for AI, read outside the vault, install dependencies, fetch websites named in notes, execute code snippets, or interpret source instructions as commands.
+The plugin reads the active note or selected passage when you start practice, and lists files only within its managed `Rehearse/cards/` folder for the library. It does not enumerate the vault, recursively index notes for AI, read outside the vault, install dependencies, fetch websites named in notes, execute code snippets, or interpret source instructions as commands.
 
 Generated text is displayed as text, not inserted as executable HTML. Exact-quote validation does not eliminate model mistakes or prompt injection risks; every generated question remains a draft for your review.
 

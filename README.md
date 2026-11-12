@@ -24,7 +24,7 @@ Rehearse is available in [Obsidian's Community directory](https://community.obsi
 2. Choose **Install**, then **Enable**.
 3. Run **Rehearse: Open practice** from the command palette and choose **Try the sample**. The sample needs no AI setup.
 
-The manual ZIP and optional BRAT methods below are also available.
+Manual installation and optional BRAT installation are also available.
 
 ### Optional beta installation with BRAT
 
@@ -36,8 +36,8 @@ BRAT is an optional beta installer. Rehearse itself works independently.
 
 ### Manual installation
 
-1. Download [rehearse-0.5.0.zip](https://github.com/shbhmrzd/rehearse-releases/releases/download/0.5.0/rehearse-0.5.0.zip) from the [release page](https://github.com/shbhmrzd/rehearse-releases/releases/tag/0.5.0).
-2. Put the extracted `rehearse` folder under `<your vault>/.obsidian/plugins/`. It must contain `main.js`, `manifest.json` and `styles.css`.
+1. Download `main.js`, `manifest.json` and `styles.css` from the [latest release](https://github.com/shbhmrzd/rehearse-releases/releases/latest).
+2. Put the three files under `<your vault>/.obsidian/plugins/rehearse/`.
 3. Reload Obsidian, enable Rehearse under **Settings → Community plugins**, and run **Rehearse: Open practice**.
 
 Use your custom configuration folder instead of `.obsidian` if you have one. On updates, replace only the plugin assets; keep `data.json` and your cards.
@@ -71,6 +71,8 @@ Named provider choices fill in the API URL. **Custom server…** supports OpenAI
 
 AI suggestions need human review. Quote matching confirms that quoted words occur in the source; it does not prove the answer is accurate or useful. Sessions accept up to 24,000 characters and generate at most ten drafts. Repository exploration, automatic source-change repair, AI grading and two-way Anki sync are not implemented.
 
+In 0.5.1, practice starts from the active note or selection. Rehearse no longer lists all note paths in a picker. Open a different note and run **Practice this note** to change the source.
+
 ## Privacy and costs
 
 Rehearse has no telemetry, advertising, payment service or hosted inference. Generation sends only selected source blocks and the learning goal directly to the provider you choose. Model discovery sends no note content. Cloud handling follows that provider's policies, and cloud generation may incur charges. Local generation requires a running local server; reviewing saved cards requires no model.
@@ -89,10 +91,10 @@ The directory's **Optional payment** classification applies because third-party 
 
 For a report, include Rehearse/Obsidian versions, your OS, provider/model and reproduction steps. Use a public or invented example; do not attach API keys, private notes or raw plugin data.
 
-The [standalone demo](https://github.com/shbhmrzd/rehearse-releases/releases/download/0.5.0/Rehearse-demo.html) can be downloaded and opened in a browser to try the sample. Browser provider calls are subject to cross-origin restrictions; the Obsidian plugin uses its native request API.
+The [0.5.0 standalone demo](https://github.com/shbhmrzd/rehearse-releases/releases/download/0.5.0/Rehearse-demo.html) can be downloaded and opened in a browser to try the sample. Browser provider calls are subject to cross-origin restrictions; the Obsidian plugin uses its native request API.
 
 ## Verification and license
 
-Version 0.5.0 passed 225 automated tests, build/lint/coverage checks and native Obsidian 1.14.5 workflow checks. Catalog installation succeeded after one retry; clean sample setup, selective saving, reload, review/undo and exports were verified. The cause of the first incomplete installation is unproven. Native testing covered Ollama generation, connection switching, key persistence, saved cards, reload, review/undo and exports. OpenAI discovery succeeded; generation was blocked by account quota. Other paid providers, native mobile and Anki import remain unverified. Checksums accompany each release.
+Version 0.5.1 passed 226 automated tests, build/lint/coverage and release checks. The earlier 0.5.0 release passed native Obsidian 1.14.5 workflow checks: sample setup, selective saving, reload, review/undo and exports. Native testing covered Ollama generation, connection switching, key persistence, saved cards, reload, review/undo and exports. The 0.5.1 changes have not yet been validated in native Obsidian. Other paid providers, native mobile and Anki import remain unverified. The 0.5.0 release includes checksums; the 0.5.1 release workflow attests the three plugin assets.
 
 MIT licensed. FSRS is provided by `ts-fsrs`; see [third-party notices](THIRD_PARTY_NOTICES.md).

@@ -29,8 +29,8 @@
 .rehearse * {
   box-sizing: border-box;
 }
-.rehearse [hidden] {
-  display: none !important;
+.rehearse [hidden][hidden] {
+  display: none;
 }
 .rehearse .rh-connections {
   margin-bottom: 24px;
